@@ -32,6 +32,8 @@ def create_new_account():
         return first_name
 
 
+
+
     def get_last_name():
         last_name = str(input("Lastname: "))
         if len(last_name.strip()) < 2:
