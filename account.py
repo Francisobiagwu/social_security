@@ -6,6 +6,9 @@ import os
 path = "account_file"
 accounts = {}
 account_file_do_exist = False
+firstname = ""
+lastname = ""
+username = ""
 
 
 class Person:
@@ -41,10 +44,17 @@ def create_new_account():
 
     def get_username():
         user_name = str(input("Username: ")).strip()
+        if len(user_name) < 5:
+            print("username must be upto 5 characters")
+            get_username()
+
         return user_name
 
     def verify_username(user_name):
-        while user_name.lower() == firstname.lower() or user_name.lower() == lastname.lower():
+        global firstname
+        global lastname
+        global username
+        while (user_name.lower() == firstname.lower()) or (user_name.lower() == lastname.lower()):
             global username
             print("firstname or lastname cannot be used as the username")
             user_name = get_username()
