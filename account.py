@@ -13,7 +13,7 @@ username = ""
 
 class Person:
     """
-    This is a class that creates and instance of a person
+    This is a class that creates an instance of a person
     """
 
     def __init__(self, first_name, last_name):
