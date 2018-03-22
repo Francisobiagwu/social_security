@@ -6,8 +6,6 @@ import hashlib
 import random
 
 world_census = {}
-accounts = {}
-account_file_do_exist = False
 
 
 class Person:
@@ -62,12 +60,6 @@ def create_social_security_number():
         print('We ran into error while fetching the social security database file')
 
 
-
-
-
-
-
-
 def get_social_security_number_database():
     """
     Obtains the existing social security numbers from database, verifies that the new
@@ -108,3 +100,5 @@ def create_default_social_security_number_database():
 
 
 
+def get_world_census():
+    return world_census
