@@ -5,7 +5,7 @@ This is a program used to create user account and credentials for a user
 import hashlib
 import random
 
-persons_created = {}
+world_census = {}
 accounts = {}
 account_file_do_exist = False
 
@@ -22,7 +22,8 @@ class Person:
         """
         self.first_name = first_name
         self.last_name = last_name
-        self.social_security_number = 4
+        self.social_security_number = create_social_security_number()
+        world_census[self.social_security_number] = (first_name, last_name)
 
 
 
@@ -32,12 +33,37 @@ def create_new_account():
     account number for the user
     :return:
     """
-fffff
 
 
 def create_social_security_number():
     social_security_hash_database = get_social_security_number_database()
-    print(social_security_hash_database)
+
+    new_ssn = (random.randint(100000000, 999999999))
+    # convert new_ssn to hash
+    hash_object = hashlib.sha512(str(new_ssn).encode())
+    new_ssn_hash = hash_object.hexdigest()
+
+    while new_ssn_hash in social_security_hash_database: # if the social security number exist create a new one
+        new_ssn = (random.randint(100000000, 999999999))
+        hash_object = hashlib.sha512(str(new_ssn).encode())
+        new_ssn_hash = hash_object.hexdigest()
+
+    # write the newly created social security number to the database
+    path = 'social_security_number_hash'
+
+    try:
+        with open(path, 'a+') as file:
+                file.write(str(new_ssn_hash) + "\n")
+
+        get_social_security_number_database() # call this function to update the social security number tuple
+        return new_ssn
+
+    except FileNotFoundError:
+        print('We ran into error while fetching the social security database file')
+
+
+
+
 
 
 
@@ -55,10 +81,12 @@ def get_social_security_number_database():
             for ssn in file:
                 social_security_hash_database.append(ssn.rstrip())
 
+        # convert the array to tuple to avoid manipulation of data
+        social_security_hash_database = tuple(social_security_hash_database)
         return social_security_hash_database
+
     except FileNotFoundError:
         print('We ran into error while fetching the social security database file')
-
 
 
 def create_default_social_security_number_database():
@@ -77,9 +105,6 @@ def create_default_social_security_number_database():
     except FileNotFoundError:
         print('We ran into error trying to write default social security numbers to database')
 
-
-create_default_social_security_number_database()
-get_social_security_number_database()
 
 
 
