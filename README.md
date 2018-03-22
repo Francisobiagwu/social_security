@@ -1,3 +1,4 @@
+Social security number is the primary means of identification in United States of America
 This is a simple program the generates Social security numbers for new babies born in the hospital
 The program starts by importing the social security number database, and then creating a tuple of the social security number hashes
 I stored the numbers in hash format to save the user if the database ever gets breached.
