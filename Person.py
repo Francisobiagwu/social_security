@@ -24,7 +24,6 @@ class Person:
         world_census[self.social_security_number] = (first_name, last_name)
 
 
-
 def create_new_account():
     """
     The create_new_account function takes the last 4 of the social security and uses it to create an
@@ -41,7 +40,7 @@ def create_social_security_number():
     hash_object = hashlib.sha512(str(new_ssn).encode())
     new_ssn_hash = hash_object.hexdigest()
 
-    while new_ssn_hash in social_security_hash_database: # if the social security number exist create a new one
+    while new_ssn_hash in social_security_hash_database:  # if the social security number exist create a new one
         new_ssn = (random.randint(100000000, 999999999))
         hash_object = hashlib.sha512(str(new_ssn).encode())
         new_ssn_hash = hash_object.hexdigest()
@@ -51,9 +50,9 @@ def create_social_security_number():
 
     try:
         with open(path, 'a+') as file:
-                file.write(str(new_ssn_hash) + "\n")
+            file.write(str(new_ssn_hash) + "\n")
 
-        get_social_security_number_database() # call this function to update the social security number tuple
+        get_social_security_number_database()  # call this function to update the social security number tuple
         return new_ssn
 
     except FileNotFoundError:
@@ -88,7 +87,7 @@ def create_default_social_security_number_database():
     try:
         with open(path, 'w') as file:
             for number in random_numbers:
-                # numbers was created, but we are going to store the hash in order to save the social security incase
+                # numbers was created, but we are going to store the hash in order to save the social security in case
                 #  of data breach
                 hash_object = hashlib.sha512(str(number).encode())
                 file.write(str(hash_object.hexdigest()) + "\n")
@@ -96,8 +95,6 @@ def create_default_social_security_number_database():
             return True
     except FileNotFoundError:
         print('We ran into error trying to write default social security numbers to database')
-
-
 
 
 def get_world_census():
