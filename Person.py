@@ -24,9 +24,6 @@ class Person:
         world_census[self.social_security_number] = (first_name, last_name)
 
 
-
-
-
 def create_social_security_number():
     """
     This function creates brand new social security number for a person
