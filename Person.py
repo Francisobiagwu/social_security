@@ -24,15 +24,14 @@ class Person:
         world_census[self.social_security_number] = (first_name, last_name)
 
 
-def create_new_account():
-    """
-    The create_new_account function takes the last 4 of the social security and uses it to create an
-    account number for the user
-    :return:
-    """
+
 
 
 def create_social_security_number():
+    """
+    This function creates brand new social security number for a person
+    :return:
+    """
     social_security_hash_database = get_social_security_number_database()
 
     new_ssn = (random.randint(100000000, 999999999))
@@ -81,6 +80,11 @@ def get_social_security_number_database():
 
 
 def create_default_social_security_number_database():
+    """
+    This function creates a default database filled with social security numbers for testing purposes
+    You shouldn't run this function if you already have a database with real social security numbers
+    :return:
+    """
     path = 'social_security_number_hash'
     random_numbers = set([random.randint(100000000, 999999999) for _ in range(0, 20)])
 
