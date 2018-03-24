@@ -1,5 +1,5 @@
 """
-This is a program used to create a person as well as assign a social security number to them
+This is a program used to create social security numbers assigned to individuals
 """
 
 import hashlib
