@@ -11,7 +11,7 @@ import sys
 import os
 
 world_census = {}
-path = "social_security_number_hashes"
+path = "social_security_number_hashes" # text file that holds the hash values of the entire population ssn
 database_integrity_path = "database_integrity"  # when we hash the database, we store the value of the hash here
 
 
