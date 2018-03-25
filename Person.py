@@ -66,8 +66,8 @@ def create_social_security_number():
     global path
 
     try:
-        with open(path, 'a+') as file:
-            file.write(str(new_ssn_hash) + "\n")
+        with open(path, 'a+') as my_file:
+            my_file.write(str(new_ssn_hash) + "\n")
 
         get_social_security_number_database()  # call this function to update the social security number tuple
         create_new_database_hash, _ = social_security_database_integrity()  # we need only create_new_database_hash
@@ -111,12 +111,12 @@ def create_default_social_security_number_database():
     random_numbers = set([random.randint(100000000, 999999999) for _ in range(0, 20)])
 
     try:
-        with open(path, 'w') as file:
+        with open(path, 'w') as my_file:
             for number in random_numbers:
                 # numbers was created, but we are going to store the hash in order to save the social security in case
                 #  of data breach
                 hash_object = hashlib.sha512(str(number).encode())
-                file.write(str(hash_object.hexdigest()) + "\n")
+                my_file.write(str(hash_object.hexdigest()) + "\n")
 
             return True
     except FileNotFoundError:
@@ -141,8 +141,8 @@ def social_security_database_integrity():
         text_hash = None
 
         try:
-            with open(path, 'r') as file:
-                text = file.read()
+            with open(path, 'r') as my_file:
+                text = my_file.read()
                 text_hash_object = hashlib.sha512(text.encode())
                 text_hash = text_hash_object.hexdigest()
 
@@ -150,8 +150,8 @@ def social_security_database_integrity():
             print(err.args)
 
         try:
-            with open(database_integrity_path, 'w') as file:
-                file.write(str(text_hash))
+            with open(database_integrity_path, 'w') as my_file:
+                my_file.write(str(text_hash))
 
         except FileNotFoundError as err:
             print(err.args)
@@ -167,16 +167,16 @@ def social_security_database_integrity():
 
         # get the last saved hash value of the database
         try:
-            with open(database_integrity_path, 'r') as file:
-                last_hash_value = file.read()
+            with open(database_integrity_path, 'r') as my_file:
+                last_hash_value = my_file.read()
 
         except FileNotFoundError as err:
             print(err.args)
 
         # get the current hash value for the database
         try:
-            with open(path, 'r') as file:
-                text = file.read()
+            with open(path, 'r') as my_file:
+                text = my_file.read()
                 text_hash_object = hashlib.sha512(text.encode())
                 current_hash_value = text_hash_object.hexdigest()
 
