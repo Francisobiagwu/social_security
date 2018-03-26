@@ -2,13 +2,14 @@ __author__ = "Francis Obiagwu"
 __email__ = "cyber.francis@comcast.net"
 __date__ = 3 / 21 / 2018
 
-import Person
+from Database import Database, Person
 
-new_baby = Person.Person('Tony', 'Jackson')
-immigrant = Person.Person('Bob', 'Smith')
+our_database = Database()
+new_baby = Person('Tony', 'Jackson', our_database)
+immigrant = Person('Bob', 'Smith', our_database)
 
 # prints the firstname, lastname and the last four of ssn
 print(new_baby.first_name, new_baby.last_name, str(new_baby.social_security_number)[5:9])
 print(immigrant.first_name, immigrant.last_name, str(immigrant.social_security_number)[5:9])
 
-print(Person.get_world_census())
+print(our_database.world_census)
