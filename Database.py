@@ -179,10 +179,8 @@ class Database:
                 print(err.args)
 
             # compare the current hash value and the last saved hash value for integrity
-            if (current_hash_value == last_hash_value) and (current_hash_value is not None) and (
-                    last_hash_value is not None):
-                return True
-            else:
-                return False
+
+            return (current_hash_value == last_hash_value) and (current_hash_value is not None) and (
+                    last_hash_value is not None)
 
         return create_hash_of_database, verify_database_integrity
