@@ -3,7 +3,9 @@ Social security number is the primary means of identification in United States o
 This system hashes the database and then saves the value of the hash on different file. If some reason, the database is tampered with or the file that stores the hash value of the database is tampered with, the system is able to detect this, informs the user and then shuts down. The user of this code can modify it to suit their purpose.
 
 
-
+Code Review
+---------------
+This code have been reviewed by CodeFactor.io and was found to contain 0 bugs
 
 
 Limitations
