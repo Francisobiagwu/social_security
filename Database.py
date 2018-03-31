@@ -18,6 +18,9 @@ class Person:
 
     def __init__(self, first_name, last_name, our_database):
         """
+        :param str first_name: The first name of the baby or the immigrant
+        :param str last_name: The last name of the baby or the immigrant
+        :param str our_database: The name of the database used for managing social security numbers
         :rtype: object
         """
         self.first_name = first_name
