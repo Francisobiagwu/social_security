@@ -1,4 +1,4 @@
-![social security number image](![Image of Yaktocat](https://3.bp.blogspot.com/-5NRFnW7tdAw/Wb2RlANdcrI/AAAAAAAAEME/X3_q0nMj4r4sn5YTNs39bxfyjQDGL_E3QCLcBGAs/s1600/Social-Security-card-blank-Google.jpg)
+(![Image of Yaktocat](https://3.bp.blogspot.com/-5NRFnW7tdAw/Wb2RlANdcrI/AAAAAAAAEME/X3_q0nMj4r4sn5YTNs39bxfyjQDGL_E3QCLcBGAs/s1600/Social-Security-card-blank-Google.jpg)
 
 
 
