@@ -1,5 +1,4 @@
 __author__ = "Francis Obiagwu"
-__email__ = "cyber.francis@comcast.net"
 __date__ = 3 / 21 / 2018
 
 from Database import Database, Person
