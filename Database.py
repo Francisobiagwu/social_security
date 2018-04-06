@@ -1,5 +1,5 @@
 __author__ = "Francis Obiagwu"
-__date__ = 03 / 24 / 2018
+__date__ = "03/24/2018"
 
 """
 This is a program used to create social security numbers assigned to individuals
