@@ -1,4 +1,4 @@
-![Image of Yaktocat](https://www.socialsecurityworks.org/wp-content/uploads/2016/02/1378474965000-SOCIAL-SECURITY-CARD.jpg)
+![Image of Yaktocat](![Image of Yaktocat](https://www.socialsecurityworks.org/wp-content/uploads/2016/02/1378474965000-SOCIAL-SECURITY-CARD.jpg))
 
 
 
